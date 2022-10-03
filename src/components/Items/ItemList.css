@@ -1,0 +1,9 @@
+.strongProducts h3 {
+    margin-top: 60px;
+}
+
+.strongProducts .itemList{
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-evenly;
+}
