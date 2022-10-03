@@ -1,0 +1,30 @@
+.storeLogoName {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.storeName {
+    color: #ce1e1e;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.storeName:hover {
+    color: #ce1e1e8f;
+}
+
+.storeLogo {
+    width: 50px;
+    margin-right: 10px;
+}
+
+.navLink {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.navLink:hover {
+    color: #ce1e1e;
+    font-weight: bold;
+}
