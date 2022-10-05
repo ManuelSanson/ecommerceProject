@@ -9,7 +9,7 @@ import Checkout from './components/Checkout/Checkout';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/ecommerceProject'>
       <NavBar />
       <Routes>
         <Route path='/' element={<ItemListContainer greeting={'Bienvenidos a la Tienda Rayada!'} />} />
