@@ -1,15 +1,23 @@
 import { useState } from "react";
+import Swal from 'sweetalert2';
 import "./ItemCount.css"
 
-const ItemCount = (() => {
+const ItemCount = (({product}) => {
     const [count, setCount] = useState(1); 
 
     const Add = (() => {
-        //agregar condicional stock
-        // if (stock > count) {
-        //     setCount(count + 1);    
-        // }
-        setCount(count + 1);
+        if (product.stock > count) {
+            setCount(count + 1);
+        } else {
+            Swal.fire({
+                title: 'Oops!',
+                text: 'No tenemos más stock',
+                icon: 'error',
+                background: '#f5f5dc',
+                confirmButtonColor: '#000000',
+                confirmButtonText: 'Ok'
+            })
+        }
     })
 
     const Delete = (() => {

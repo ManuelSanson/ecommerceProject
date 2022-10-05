@@ -2,22 +2,21 @@
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    background-color: rgba(0, 0, 0, 0.699);
+    background-color: transparent;
     font-weight: bold;
-    width: 150px;
-    padding: 6px;
+    width: 130px;
+    padding: 4px;
+}
+
+.counter h2 {
+    color: black;
+    font-size: 16px;
 }
 
 .counter button {
     background-color: transparent;
     border: none;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
     color: #ce1e1e;
 }
-
-.counter h5 {
-    color: white;
-    font-size: 20px;
-}
-
