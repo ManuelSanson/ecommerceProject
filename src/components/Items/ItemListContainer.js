@@ -15,10 +15,24 @@ const ItemListContainer = ({greeting}) => {
 
     const [products, setProducts] = useState([])
 
+    // useEffect(() => {
+    //     getProducts()
+    //         .then((data) => setProducts(data))
+    //         .catch((error) => console.warn(error))
+    // }, [])
     useEffect(() => {
-        getProducts()
-            .then((data) => setProducts(data))
-            .catch((error) => console.warn(error))
+        const fetchData = async () => {
+            try {
+                const response = await getProducts();
+                console.log(response);
+                if(response){
+                    setProducts(response)
+                }
+            } catch (error) {
+                console.warn(error);
+            }
+        } 
+        fetchData()
     }, [])
 
     return (
