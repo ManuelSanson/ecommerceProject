@@ -1,33 +1,40 @@
 import { useEffect, useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import { useParams } from 'react-router-dom';
-import { getProducts } from '../../utils/products';
+import { getAllProducts, getProductsByCategory } from '../../utils/products';
 import ItemList from './ItemList';
 import "./ItemListContainer.css";
 
 const ItemListContainer = ({greeting}) => {
 
     const { categoryId } = useParams();
-    
-    useEffect(() => {
-        console.log(categoryId);
-    }, [categoryId])
 
     const [products, setProducts] = useState([])
 
     useEffect(() => {
         const fetchData = async () => {
-            try {
-                const response = await getProducts();
-                if(response){
-                    setProducts(response)
+            if (categoryId) {
+                try {
+                    const response = await getProductsByCategory(categoryId);
+                    if(response){
+                        setProducts(response)
+                    }
+                } catch (error) {
+                    console.warn(error);
                 }
-            } catch (error) {
-                console.warn(error);
+            } else {
+                try {
+                    const response = await getAllProducts();
+                    if(response){
+                        setProducts(response)
+                    }
+                } catch (error) {
+                    console.warn(error);
+                }
             }
-        } 
+        }
         fetchData()
-    }, [])
+    }, [categoryId])
 
     return (
         <Container>
