@@ -3,8 +3,6 @@ import Card from "react-bootstrap/Card";
 import { Link } from 'react-router-dom';
 import './Item.css';
 
-
-
 function Item({product}) {
     
     return (
