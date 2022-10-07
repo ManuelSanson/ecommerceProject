@@ -11,11 +11,11 @@ const ItemDetail = ({product}) => {
     AOS.init()
     return (
         <Container className='itemDetail'>
-            <Card data-aos={'zoom-out'} className='itemDetailCard' style={{width: "35rem",}}>
+            <Card data-aos={'zoom-out'} className='itemDetailCard' style={{width: "50rem",}}>
                 <Card.Img variant="top" src={product.pictureURL} className='p-2 itemDetailPicture'/>
                 <Card.Body className='mt-1 mb-1 itemDetailCardBody'>
-                    <Card.Title> {product.title} </Card.Title>
-                    <Card.Text className='pt-2 cardTextPrice'>
+                    <Card.Title className='mb-4'> {product.title} </Card.Title>
+                    <Card.Text className='pt-2 mb-3 cardTextPrice'>
                         $ {product.price}
                     </Card.Text>
                     <Card.Text className='pt-2'>
