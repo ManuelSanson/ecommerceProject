@@ -1,9 +1,10 @@
-.strongProducts h3 {
+.products h3 {
     margin-top: 60px;
 }
 
-.strongProducts .itemList{
+.products .itemList{
     margin-top: 40px;
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }

@@ -11,7 +11,7 @@ const ItemCount = (({product}) => {
         } else {
             Swal.fire({
                 title: 'Oops!',
-                text: 'No tenemos más stock',
+                text: 'It exceeds our stock',
                 icon: 'error',
                 background: '#f5f5dc',
                 confirmButtonColor: '#000000',

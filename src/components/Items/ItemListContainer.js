@@ -36,9 +36,13 @@ const ItemListContainer = ({greeting}) => {
         fetchData()
     }, [categoryId])
 
+    const capitalizeFirstLetter = (string) => {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
     return (
         <Container>
-            <h1 className="title">Products</h1>
+            <h1 className="title">{categoryId && capitalizeFirstLetter(categoryId)}</h1>
             <h3 className="greeting">{greeting}</h3>
             <ItemList products={products}/>
         </Container>

@@ -1,10 +1,23 @@
 .itemCard {
     text-align: center;
-    background-color: beige;
+    background-color: #8d848428;
     margin-bottom: 50px;
 }
 
 .cardTextPrice {
     font-size: 18px;
     font-weight: 500;
+}
+
+.cardTextDescription {
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.addToCart {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
 }

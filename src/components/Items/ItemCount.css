@@ -4,13 +4,13 @@
     align-items: baseline;
     background-color: transparent;
     font-weight: bold;
-    width: 130px;
+    width: 100px;
     padding: 4px;
+    margin-right: 10px;
 }
 
-.counter h2 {
-    color: black;
-    font-size: 16px;
+.counter h5 {
+    font-size: 18px;
 }
 
 .counter button {
