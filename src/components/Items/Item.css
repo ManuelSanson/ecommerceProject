@@ -2,6 +2,14 @@
     text-align: center;
     background-color: #8d848428;
     margin-bottom: 50px;
+    align-items: center;
+}
+
+.itemCardPicture{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .cardTextPrice {

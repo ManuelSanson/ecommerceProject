@@ -9,7 +9,7 @@ function Item({product}) {
     AOS.init()
     return (
         <Card data-aos={"flip-down"} className='itemCard' style={{width: "18rem",}}>
-            <Card.Img variant="top" src={product.pictureURL} className='p-2'/>
+            <Card.Img variant="top" src={product.pictureURL} className='p-2 itemCardPicture'/>
             <Card.Body>
                 <Card.Title> {product.title} </Card.Title>
                 <Card.Text className='cardTextPrice'>

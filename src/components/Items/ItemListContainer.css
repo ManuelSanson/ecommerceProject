@@ -1,11 +1,11 @@
 .title{
     color: #302d2d;
-    margin: 20px auto;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 .greeting {
     color: #ce1e1e;
     text-decoration: underline;
     text-align: center;
-    margin-bottom: 80px;
 }

@@ -43,7 +43,7 @@ const ItemListContainer = ({greeting}) => {
     return (
         <Container>
             <h1 className="title">{categoryId && capitalizeFirstLetter(categoryId)}</h1>
-            <h3 className="greeting">{greeting}</h3>
+            <h3 className="greeting">{!categoryId && greeting}</h3>
             <ItemList products={products}/>
         </Container>
     )
