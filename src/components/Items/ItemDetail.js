@@ -2,7 +2,6 @@ import Container from 'react-bootstrap/Container';
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { Link } from 'react-router-dom';
-//import Item from "./Item";
 import ItemCount from "./ItemCount";
 import "./ItemDetail.css"
 
@@ -20,12 +19,11 @@ const ItemDetail = ({product}) => {
                         {product.description}
                     </Card.Text>
                     <ItemCount product={product}/>
-                    <Button className='mt-3' variant="dark" as={Link} to={`/item/${product.id}`}> 
-                        Agregar al carrito
+                    <Button className='mt-3' variant="dark" as={Link} to={'/cart'}> 
+                        Add to cart
                     </Button>
                 </Card.Body>
             </Card>
-            {/* <Item product={product} /> */}
         </Container>
     )
 }

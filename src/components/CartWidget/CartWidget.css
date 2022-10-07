@@ -1,4 +1,8 @@
 .container svg {
-    color: #ce1e1e;
+    color: black;
     font-size: 24px;
 }
+
+.container svg:hover {
+    color: white;
+} 

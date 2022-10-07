@@ -5,13 +5,13 @@
 }
 
 .storeName {
-    color: #ce1e1e;
+    color: black;
     font-weight: bold;
     text-decoration: none;
 }
 
 .storeName:hover {
-    color: #ce1e1e8f;
+    color: white;
 }
 
 .storeLogo {
@@ -22,9 +22,10 @@
 .navLink {
     margin-right: 10px;
     margin-left: 10px;
+    color: white;
 }
 
 .navLink:hover {
-    color: #ce1e1e;
+    color: black;
     font-weight: bold;
 }

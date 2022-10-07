@@ -1,8 +1,12 @@
 const products = [
-    { id: 1, title: "Camiseta", category: 'camisetas', description: "Camiseta de algodón negra", price: 600, pictureURL: "https://res.cloudinary.com/diqry3ihg/image/upload/v1664831392/productPictures/remeraNegra_a7pxfc.png", stock: 80 },
-    { id: 2, title: "Buzo", category: 'buzos', description: "Buzo medio cierre negro", price: 800, pictureURL: "https://res.cloudinary.com/diqry3ihg/image/upload/v1664831372/productPictures/buzoMedioCierre_h65mis.png", stock: 20 },
-    { id: 3, title: "Campera", category: 'camperas', description: "Campera negra sin capucha", price: 1400, pictureURL: "https://res.cloudinary.com/diqry3ihg/image/upload/v1664831385/productPictures/campera_nzzcoz.png", stock: 12 }
+    { id: 1, title: "All Blacks Jersey", category: 'jerseys', description: "New Zealand All Blacks Home Rugby Shirt 2021", price: 1600, pictureURL: "https://www.lovellrugby.es/products/products_760x507/905593.jpg", stock: 13 },
+    { id: 2, title: "Scotland Hoodie", category: 'hoodies', description: "Scotland Cotton Hoodie", price: 2300, pictureURL: "https://www.lovellrugby.es/products/products_760x507/430063.jpg", stock: 18 },
+    { id: 3, title: "England Short", category: 'shorts', description: "England Home Shorts 2021 2022", price: 1100, pictureURL: "https://www.lovellrugby.es/products/products_760x507/955012.jpg", stock: 12 },
+    { id: 4, title: "British and Irish Lions Jersey", category: 'jerseys', description: "British and Irish Lions Pro Shirt Tango Red", price: 1700, pictureURL: "https://www.lovellrugby.es/products/products_760x507/349151.jpg", stock: 18 },
+    { id: 5, title: "Italy Hoodie", category: 'hoodies', description: "Italy Full Zip Hoodie", price: 2200, pictureURL: "https://www.lovellrugby.es/products/products_760x507/592813.jpg", stock: 10 },
+    { id: 6, title: "Scotland Short", category: 'shorts', description: "Scotland 20/21 Training Shorts", price: 900, pictureURL: "https://www.lovellrugby.es/products/products_760x507/430093.jpg", stock: 20 }
 ]
+
 
 export const getAllProducts = () => {
     const promise = new Promise ((resolve) => {

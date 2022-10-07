@@ -17,7 +17,7 @@ function Item({product}) {
                     {product.description}
                 </Card.Text>
                 <Button className='mt-3' variant="dark" as={Link} to={`/item/${product.id}`}> 
-                    Ver detalles
+                    View details
                 </Button>
             </Card.Body>
         </Card>
