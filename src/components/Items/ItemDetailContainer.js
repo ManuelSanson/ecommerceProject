@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { getProduct } from "../../utils/products";
+import Spinner from "../Spinner/Spinner";
 import ItemDetail from "./ItemDetail";
 import './ItemDetailContainer.css'
 
@@ -26,7 +27,7 @@ const ItemDetailContainer = () => {
 
     return (
         <Container className="itemDetailContainer">
-            {product && <ItemDetail product={product} />}
+            {product ? <ItemDetail product={product} /> : <Spinner/>}
         </Container>
     );
 }
