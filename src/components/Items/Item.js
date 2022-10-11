@@ -5,7 +5,7 @@ import './Item.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-function Item({product}) {
+const Item = ({product}) => {
     AOS.init()
     return (
         <Card data-aos={"flip-down"} className='itemCard' style={{width: "18rem",}}>
