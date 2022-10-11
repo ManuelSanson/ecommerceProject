@@ -6,6 +6,7 @@ import CartView from "./CartView";
 import EmptyCartMessage from "./EmptyCartMessage";
 // import { getProduct } from "../../utils/products";
 import './Cart.css';
+import { Link } from "react-router-dom";
 
 const Cart = () => {
     const { cartList, removeList } = useCartContext();
@@ -18,7 +19,8 @@ const Cart = () => {
                     {cartList.map((product) => 
                     <CartView key={product.id} product={product}/>
                     )}
-                    <div className='emptyCartButtonContainer'>
+                    <div className='cartButtonsContainer'>
+                        <Button variant='light'  className='' as={Link} to='/'> Continue Shopping </Button>
                         <Button variant='danger'  className='emptyCartButton' onClick={() => removeList()}> Empty Cart </Button>
                     </div>
                 </div> 
