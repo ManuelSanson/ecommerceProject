@@ -1,0 +1,13 @@
+.EmptyCartMessageContainer {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.continueShoppingButton {
+    margin: 30px;
+    background-color: #DC3545;
+    border: #DC3545;
+}

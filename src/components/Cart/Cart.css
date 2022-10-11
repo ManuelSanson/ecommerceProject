@@ -1,0 +1,13 @@
+.emptyCartButtonContainer {
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+
+.emptyCartButton {
+    margin: 30px;
+    background-color: #DC3545;
+    border: #DC3545;
+}

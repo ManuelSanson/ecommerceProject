@@ -1,0 +1,40 @@
+.cartItemsContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.cartItemCard {
+    display: flex;
+    flex-direction: row;
+}
+
+.cartItemBody {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.cartItemCardPicture {
+    width: 20%;
+}
+
+.deleteButton {
+    background-color: transparent;
+    border: transparent;
+}
+
+.deleteButton:hover {
+    background-color: #DC3545;
+    border: #DC3545;
+    padding: 4px;
+    border-radius: 15%;
+} 
+
+.deleteButton svg:hover {
+    background-color: transparent;
+    border: transparent;
+    color: white;
+} 
