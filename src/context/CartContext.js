@@ -28,6 +28,7 @@ const CartContextProvider = ({children}) => {
                 imageWidth: 200,
                 background: '#f5f5dc',
                 imageAlt: 'Product image',
+                confirmButtonColor: '#000000',
             })
         }
     }
