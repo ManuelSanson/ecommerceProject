@@ -6,20 +6,22 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ItemDetailContainer from './components/Items/ItemDetailContainer';
 import Cart from './components/Cart/Cart'
 import Checkout from './components/Checkout/Checkout';
+import CartContextProvider from './context/CartContext';
 
-function App() {
+function App() {  
   return (
-    <BrowserRouter basename='/ecommerceProject'>
-      <NavBar />
-      <Routes>
-        <Route path='/' element={<ItemListContainer greeting={'Bienvenidos a la Tienda Rayada!'} />} />
-        <Route path='/category/:categoryId' element={<ItemListContainer greeting={'Bienvenidos a la Tienda Rayada!'} />} />
-        <Route path='/item/:id' element={<ItemDetailContainer/>} />
-        <Route path='/cart' element={<Cart/>} />
-        <Route path='/checkout' element={<Checkout/>} />
-      </Routes>
-      
-    </BrowserRouter>
+      <BrowserRouter basename='/ecommerceProject'>
+        <CartContextProvider>
+          <NavBar />
+          <Routes>
+            <Route path='/' element={<ItemListContainer greeting={'Welcome to the Rugby Corner!'} />} />
+            <Route path='/category/:categoryId' element={<ItemListContainer/>} />
+            <Route path='/item/:id' element={<ItemDetailContainer/>} />
+            <Route path='/cart' element={<Cart/>} />
+            <Route path='/checkout' element={<Checkout/>} />
+          </Routes>
+        </CartContextProvider>
+      </BrowserRouter>
   );
 }
 
