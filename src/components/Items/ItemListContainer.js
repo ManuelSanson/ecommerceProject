@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import { useParams } from 'react-router-dom';
 import { getAllProducts, getProductsByCategory } from '../../utils/products';
+import Spinner from '../Spinner/Spinner';
 import ItemList from './ItemList';
 import "./ItemListContainer.css";
 
@@ -15,6 +16,7 @@ const ItemListContainer = ({greeting}) => {
         const fetchData = async () => {
             if (categoryId) {
                 try {
+                    setProducts([])
                     const response = await getProductsByCategory(categoryId);
                     if(response){
                         setProducts(response)
@@ -24,6 +26,7 @@ const ItemListContainer = ({greeting}) => {
                 }
             } else {
                 try {
+                    setProducts([])
                     const response = await getAllProducts();
                     if(response){
                         setProducts(response)
@@ -42,9 +45,9 @@ const ItemListContainer = ({greeting}) => {
 
     return (
         <Container>
-            <h1 className="title">{categoryId && capitalizeFirstLetter(categoryId)}</h1>
-            <h3 className="greeting">{!categoryId && greeting}</h3>
-            <ItemList products={products}/>
+            <h3 className="title">{categoryId && capitalizeFirstLetter(categoryId)}</h3>
+            <h3 className="greeting">{greeting}</h3>
+            {products.length > 0 ? <ItemList products={products}/> : <div className='spinnerContainer'><Spinner/></div>}
         </Container>
     )
 }

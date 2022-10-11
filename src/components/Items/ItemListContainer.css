@@ -9,3 +9,10 @@
     text-decoration: underline;
     text-align: center;
 }
+
+.spinnerContainer {
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
