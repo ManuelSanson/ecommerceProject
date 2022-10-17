@@ -1,10 +1,7 @@
-// import { useEffect, useState } from "react";
 import { Button, Container } from "react-bootstrap";
-// import { useParams } from "react-router-dom";
 import { useCartContext } from "../../context/CartContext";
 import CartView from "./CartView";
 import EmptyCartMessage from "./EmptyCartMessage";
-// import { getProduct } from "../../utils/products";
 import './Cart.css';
 import { Link } from "react-router-dom";
 
@@ -20,7 +17,7 @@ const Cart = () => {
                     <CartView key={product.id} product={product}/>
                     )}
                     <div className='cartButtonsContainer'>
-                        <Button variant='light'  className='' as={Link} to='/'> Continue Shopping </Button>
+                        <Button variant='light'  className='border' as={Link} to='/'> Continue Shopping </Button>
                         <Button variant='danger'  className='emptyCartButton' onClick={() => removeList()}> Empty Cart </Button>
                     </div>
                 </div> 
