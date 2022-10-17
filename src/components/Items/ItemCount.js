@@ -1,10 +1,8 @@
-import { useState } from "react";
 import Swal from 'sweetalert2';
 import "./ItemCount.css"
 
-const ItemCount = (({product}) => {
-    const [count, setCount] = useState(1); 
-
+const ItemCount = (({product, count, setCount}) => {
+    
     const Add = (() => {
         if (product.stock > count) {
             setCount(count + 1);

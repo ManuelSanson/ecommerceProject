@@ -7,7 +7,7 @@ export const useCartContext = () => useContext(CartContext);
 const CartContextProvider = ({children}) => {
     const [cartList, setCartList] = useState([])
 
-    const addToCart = (newItem) => {
+    const addToCart = (newItem, quantity) => {
         const isInCart = cartList.some((item) => item.id === newItem.id);
         if (isInCart) {
             Swal.fire({
@@ -20,7 +20,7 @@ const CartContextProvider = ({children}) => {
             })
             return;
         } else {
-            setCartList([...cartList, newItem])
+            setCartList([...cartList, {...newItem, quantity}])
             Swal.fire({
                 title: 'Added to cart!',
                 text: `${newItem.title}`,

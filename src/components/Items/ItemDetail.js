@@ -6,9 +6,17 @@ import ItemCount from "./ItemCount";
 import "./ItemDetail.css";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { useCartContext } from '../../context/CartContext';
+import { useState } from 'react';
 
 const ItemDetail = ({product}) => {
     AOS.init()
+
+    const { addToCart, cartList } = useCartContext()
+    const isInCart = () => cartList.some((item) => item.id === product.id);
+
+    const [count, setCount] = useState(1);
+
     return (
         <Container className='itemDetail'>
             <Card data-aos={'zoom-out'} className='itemDetailCard' style={{width: "50rem",}}>
@@ -21,12 +29,16 @@ const ItemDetail = ({product}) => {
                     <Card.Text className='pt-2'>
                         {product.description}
                     </Card.Text>
-                    <div className='addToCart'>
-                        <ItemCount product={product}/>
-                        <Button className='mt-3' variant="dark" as={Link} to={'/cart'}> 
+                    {isInCart(product.id) ?
+                    <Button as={Link} to={'/cart'} className='mt-3' variant="dark">
+                        Go to Cart
+                    </Button>
+                    : <div className='addToCart'>
+                        <ItemCount product={product} count={count} setCount={setCount}/>
+                        <Button onClick={() => addToCart(product, count)} className='mt-3' variant="dark">
                             Add to cart
                         </Button>
-                    </div>
+                    </div>}
                     <Card.Text className='mt-3'>
                         Stock available: {product.stock}
                     </Card.Text>
