@@ -42,8 +42,20 @@ const CartContextProvider = ({children}) => {
         return setCartList(deleteItem)
     }
 
+    const calculateItemsQuantity = () => {
+        const initialValue = 0;
+
+        const quantityInCart = cartList.reduce(
+        (accumulator, currentValue) => accumulator + currentValue.quantity,
+        initialValue
+        );
+        console.log(quantityInCart);
+        return quantityInCart;
+        
+    }
+
     return (
-        <CartContext.Provider value={{cartList, addToCart, removeList, deleteItem}}>
+        <CartContext.Provider value={{cartList, addToCart, removeList, deleteItem, calculateItemsQuantity}}>
             {children}
         </CartContext.Provider>
     )
