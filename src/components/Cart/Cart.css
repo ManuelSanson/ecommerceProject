@@ -10,3 +10,7 @@
     background-color: #DC3545;
     border: #DC3545;
 }
+
+.totalContainer {
+    text-align: end;
+}
