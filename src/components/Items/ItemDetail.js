@@ -12,10 +12,15 @@ import { useState } from 'react';
 const ItemDetail = ({product}) => {
     AOS.init()
 
-    const { addToCart, cartList } = useCartContext()
-    const isInCart = () => cartList.some((item) => item.id === product.id);
+    const { addToCart } = useCartContext()
 
     const [count, setCount] = useState(1);
+    const [showItemCount, setShowItemCount] = useState(true);
+
+    const handleClick = () => {
+        setShowItemCount(false);
+        addToCart(product, count);
+    } 
 
     return (
         <Container className='itemDetail'>
@@ -29,16 +34,19 @@ const ItemDetail = ({product}) => {
                     <Card.Text className='pt-2'>
                         {product.description}
                     </Card.Text>
-                    {isInCart(product.id) ?
-                    <Button as={Link} to={'/cart'} className='mt-3' variant="dark">
-                        Go to Cart
-                    </Button>
-                    : <div className='addToCart'>
-                        <ItemCount product={product} count={count} setCount={setCount}/>
-                        <Button onClick={() => addToCart(product, count)} className='mt-3' variant="dark">
-                            Add to cart
+                    {showItemCount && 
+                        <div className='addToCart'>
+                            <ItemCount product={product} count={count} setCount={setCount}/>
+                            <Button onClick={handleClick} className='mt-3' variant="dark">
+                                Add to cart
+                            </Button>
+                        </div>
+                    }
+                    {!showItemCount && 
+                        <Button as={Link} to={'/cart'} className='mt-3' variant="success">
+                            View Cart
                         </Button>
-                    </div>}
+                    }
                     <Card.Text className='mt-3'>
                         Stock available: {product.stock}
                     </Card.Text>

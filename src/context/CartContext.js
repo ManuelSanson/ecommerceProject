@@ -7,19 +7,10 @@ export const useCartContext = () => useContext(CartContext);
 const CartContextProvider = ({children}) => {
     const [cartList, setCartList] = useState([])
 
+    const isInCart = (id) => cartList.some((item) => item.id === Number(id));
+    
     const addToCart = (newItem, quantity) => {
-        const isInCart = cartList.some((item) => item.id === newItem.id);
-        if (isInCart) {
-            Swal.fire({
-                title: 'Oops!',
-                text: 'You have already added this product',
-                icon: 'error',
-                background: '#f5f5dc',
-                confirmButtonColor: '#000000',
-                confirmButtonText: 'Ok'
-            })
-            return;
-        } else {
+        if (!isInCart(newItem.id)) {
             setCartList([...cartList, {...newItem, quantity}])
             Swal.fire({
                 title: 'Added to cart!',
@@ -29,7 +20,24 @@ const CartContextProvider = ({children}) => {
                 background: '#f5f5dc',
                 imageAlt: 'Product image',
                 confirmButtonColor: '#000000',
-            })
+            })            
+        } else {
+            const itemIndex = cartList.findIndex((item) => item.id === Number(newItem.id));
+            const itemDraft = {...cartList[itemIndex]};
+            itemDraft.quantity = itemDraft.quantity + quantity;
+
+            const cartDraft = [...cartList];
+            cartDraft[itemIndex] = itemDraft;
+            setCartList(cartDraft);
+            Swal.fire({
+                title: 'You updated the quantity!',
+                text: `${newItem.title}`,
+                imageUrl: `${newItem.pictureURL}`,
+                imageWidth: 200,
+                background: '#f5f5dc',
+                imageAlt: 'Product image',
+                confirmButtonColor: '#000000',
+            })    
         }
     }
 
@@ -38,28 +46,27 @@ const CartContextProvider = ({children}) => {
     }
 
     const deleteItem = (id) => {
-        const deleteItem = cartList.filter((item) => item.id !== id)
-        return setCartList(deleteItem)
+        const deleteItem = cartList.filter((item) => item.id !== id);
+        return setCartList(deleteItem);
     }
 
     const calculateItemsQuantity = () => {
-        const initialValue = 0;
-
-        const quantityInCart = cartList.reduce(
-        (accumulator, currentValue) => accumulator + currentValue.quantity,
-        initialValue
-        );
-        console.log(quantityInCart);
-        return quantityInCart;
+        const quantityInCart = cartList.reduce((accumulator, currentValue) => accumulator + currentValue.quantity, 0);
         
+        return quantityInCart;
+    }
+
+    const calculateTotal = () => {
+        const totalPrice = cartList.reduce((accumulator, item) => accumulator + (item.price * item.quantity), 0);
+
+        return totalPrice;
     }
 
     return (
-        <CartContext.Provider value={{cartList, addToCart, removeList, deleteItem, calculateItemsQuantity}}>
+        <CartContext.Provider value={{cartList, isInCart, addToCart, removeList, deleteItem, calculateItemsQuantity, calculateTotal}}>
             {children}
         </CartContext.Provider>
     )
-
 }
 
 export default CartContextProvider;
