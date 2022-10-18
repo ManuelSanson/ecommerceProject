@@ -7,7 +7,7 @@ export const useCartContext = () => useContext(CartContext);
 const CartContextProvider = ({children}) => {
     const [cartList, setCartList] = useState([])
 
-    const isInCart = (id) => cartList.some((item) => item.id === Number(id));
+    const isInCart = (id) => cartList.some((item) => item.id === id);
     
     const addToCart = (newItem, quantity) => {
         if (!isInCart(newItem.id)) {
@@ -22,13 +22,14 @@ const CartContextProvider = ({children}) => {
                 confirmButtonColor: '#000000',
             })            
         } else {
-            const itemIndex = cartList.findIndex((item) => item.id === Number(newItem.id));
+            const itemIndex = cartList.findIndex((item) => item.id === newItem.id);
             const itemDraft = {...cartList[itemIndex]};
             itemDraft.quantity = itemDraft.quantity + quantity;
 
             const cartDraft = [...cartList];
             cartDraft[itemIndex] = itemDraft;
             setCartList(cartDraft);
+            console.log('modificado');
             Swal.fire({
                 title: 'You updated the quantity!',
                 text: `${newItem.title}`,
