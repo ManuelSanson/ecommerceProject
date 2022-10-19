@@ -29,7 +29,6 @@ const CartContextProvider = ({children}) => {
             const cartDraft = [...cartList];
             cartDraft[itemIndex] = itemDraft;
             setCartList(cartDraft);
-            console.log('modificado');
             Swal.fire({
                 title: 'You updated the quantity!',
                 text: `${newItem.title}`,
@@ -42,13 +41,13 @@ const CartContextProvider = ({children}) => {
         }
     }
 
-    const removeList = () => {
+    const clearList = () => {
         setCartList([])
     }
 
-    const deleteItem = (id) => {
-        const deleteItem = cartList.filter((item) => item.id !== id);
-        return setCartList(deleteItem);
+    const removeItem = (id) => {
+        const removeItem = cartList.filter((item) => item.id !== id);
+        return setCartList(removeItem);
     }
 
     const itemsQuantity = cartList.reduce((accumulator, currentValue) => accumulator + currentValue.quantity, 0);
@@ -56,7 +55,7 @@ const CartContextProvider = ({children}) => {
     const totalPrice = cartList.reduce((accumulator, item) => accumulator + (item.price * item.quantity), 0); 
 
     return (
-        <CartContext.Provider value={{cartList, isInCart, addToCart, removeList, deleteItem, itemsQuantity, totalPrice}}>
+        <CartContext.Provider value={{cartList, isInCart, addToCart, clearList, removeItem, itemsQuantity, totalPrice}}>
             {children}
         </CartContext.Provider>
     )
