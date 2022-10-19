@@ -4,16 +4,16 @@ import { useCartContext } from '../../context/CartContext';
 import "./CartWidget.css";
 
 const CartWidget = () => {
-    const { calculateItemsQuantity } = useCartContext();
+    const { itemsQuantity } = useCartContext();
     
     return (
         <div className='cartWidgetContainer'>
             <Link to='/cart'>
                 <FiShoppingCart/>
             </Link>
-            {calculateItemsQuantity() > 0 &&
+            {itemsQuantity > 0 &&
             <div className='itemsQuantity'>
-                <h6> {calculateItemsQuantity()} </h6>
+                <h6> {itemsQuantity} </h6>
             </div>}
         </div>
     )

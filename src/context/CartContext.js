@@ -51,20 +51,12 @@ const CartContextProvider = ({children}) => {
         return setCartList(deleteItem);
     }
 
-    const calculateItemsQuantity = () => {
-        const quantityInCart = cartList.reduce((accumulator, currentValue) => accumulator + currentValue.quantity, 0);
-        
-        return quantityInCart;
-    }
-
-    const calculateTotal = () => {
-        const totalPrice = cartList.reduce((accumulator, item) => accumulator + (item.price * item.quantity), 0);
-
-        return totalPrice;
-    }
+    const itemsQuantity = cartList.reduce((accumulator, currentValue) => accumulator + currentValue.quantity, 0);
+    
+    const totalPrice = cartList.reduce((accumulator, item) => accumulator + (item.price * item.quantity), 0); 
 
     return (
-        <CartContext.Provider value={{cartList, isInCart, addToCart, removeList, deleteItem, calculateItemsQuantity, calculateTotal}}>
+        <CartContext.Provider value={{cartList, isInCart, addToCart, removeList, deleteItem, itemsQuantity, totalPrice}}>
             {children}
         </CartContext.Provider>
     )
