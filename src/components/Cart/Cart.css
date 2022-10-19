@@ -1,8 +1,28 @@
-.cartButtonsContainer {
-    width: 95%;
+.orderContainer{
     display: flex;
-    align-items: center;
-    justify-content: right;
+    justify-content: space-around;
+}
+
+
+.yourCartItems{
+    display: flex;
+    flex-direction: column;
+}
+
+.yourCartItems h2, h4 {
+    margin-bottom: 0px;
+    padding: 10px;
+}
+
+.orderSummary {
+    background-color: beige;
+    border: solid;
+    border-radius: 10px;
+}
+
+.orderSummaryDetail {
+    display: flex;
+    justify-content: space-between;
 }
 
 .emptyCartButton {

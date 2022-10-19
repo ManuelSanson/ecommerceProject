@@ -1,9 +1,3 @@
-.cartItemsContainer {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 40px;
-}
-
 .cartItemCard {
     display: flex;
     flex-direction: row;
@@ -18,28 +12,6 @@
 
 .cartItemCardPicture {
     width: 20%;
-}
-
-.yourCartItems{
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.yourCartItems h2, h4 {
-    margin-bottom: 0px;
-    padding: 10px;
-}
-
-.orderSummary {
-    background-color: beige;
-    border: solid;
-    border-radius: 10px;
-}
-
-.orderSummaryDetail {
-    display: flex;
-    justify-content: space-between;
 }
 
 .deleteButton {
