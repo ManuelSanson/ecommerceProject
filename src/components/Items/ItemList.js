@@ -1,7 +1,7 @@
 import Item from "./Item";
 import "./ItemList.css";
 
-const ItemList = ({products}) => {
+const ItemList = ({products = []}) => {
     return (
         <section className="products">
             <div className='itemList'>
