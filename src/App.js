@@ -7,8 +7,10 @@ import ItemDetailContainer from './components/Items/ItemDetailContainer';
 import Cart from './components/Cart/Cart'
 import Checkout from './components/Checkout/Checkout';
 import CartContextProvider from './context/CartContext';
+import Contact from './components/Contact/Contact';
+import Footer from './components/Footer/Footer';
 
-function App() {  
+function App() {
   return (
       <BrowserRouter basename='/ecommerceProject'>
         <CartContextProvider>
@@ -17,9 +19,11 @@ function App() {
             <Route path='/' element={<ItemListContainer greeting={'Welcome to the Rugby Corner!'} />} />
             <Route path='/category/:categoryId' element={<ItemListContainer/>} />
             <Route path='/item/:id' element={<ItemDetailContainer/>} />
+            <Route path='/contact' element={<Contact/>} />
             <Route path='/cart' element={<Cart/>} />
             <Route path='/checkout' element={<Checkout/>} />
           </Routes>
+          <Footer />
         </CartContextProvider>
       </BrowserRouter>
   );
