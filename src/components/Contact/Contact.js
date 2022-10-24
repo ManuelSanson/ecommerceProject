@@ -10,27 +10,19 @@ const Contact = () => {
 
     const submitMessage = (e) => {
         e.preventDefault();
-        if (emailAddress !== '' && subject !== '' && message !== '') {
-            Swal.fire({
-                position: 'center',
-                icon: 'success',
-                title: 'Your message has been sent',
-                showConfirmButton: false,
-                timer: 1500
-            })
-            setEmailAddress('');
-            setSubject('');
-            setMessage('');
-        } else {
-            Swal.fire({
-                position: 'center',
-                icon: 'error',
-                title: 'Please fill out all fields',
-                showConfirmButton: false,
-                timer: 1500
-            })
-        }
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Your message has been sent',
+            showConfirmButton: false,
+            timer: 1500
+        })
+        setEmailAddress('');
+        setSubject('');
+        setMessage('');
     }
+
+    const isDisabled = emailAddress === '' || subject === '' || message === '';
 
     return (
         <main>
@@ -53,7 +45,7 @@ const Contact = () => {
                 </Form>
             </Container>
             <div className="mb-2 text-center">
-                <Button onClick={submitMessage} variant="success" type="submit">
+                <Button disabled={isDisabled} onClick={submitMessage} variant="success" type="submit">
                     Submit
                 </Button>
             </div>
