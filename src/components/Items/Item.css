@@ -17,13 +17,6 @@
     font-weight: 500;
 }
 
-.cardTextDescription {
-    height: 48px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .addToCart {
     display: flex;
     justify-content: center;
