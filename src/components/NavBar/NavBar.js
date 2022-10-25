@@ -18,7 +18,7 @@ const NavBar = () => {
                         <Nav.Link as={Link} to='category/jerseys' className="navLink">Jerseys</Nav.Link>
                         <Nav.Link as={Link} to='category/hoodies' className="navLink">Hoodies</Nav.Link>
                         <Nav.Link as={Link} to='category/shorts' className="navLink">Shorts</Nav.Link>
-                        <Nav.Link as={Link} to='category/contact' className="navLink">Contact</Nav.Link>
+                        <Nav.Link as={Link} to='/contact' className="navLink">Contact</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             <CartWidget/>
