@@ -49,8 +49,29 @@ export const getProduct = (id) => {
                     id: snapshot.id,
                     ...snapshot.data()
                 };
-                return item
+                return item;
             }
+        })
+        .catch(error => console.warn(error));
+};
+
+export const getStrongProducts = () => {
+    const database = getFirestore();
+    const collectionReference = collection(database, 'items')
+    const collectionQuery = query(collectionReference, where('strong', '==', true))
+
+    return getDocs(collectionQuery)
+        .then((snapshot) => {
+            if (snapshot.size === 0) {
+                return [];
+            }
+            const list = snapshot
+                .docs
+                .map((doc) => ({
+                    id: doc.id,
+                    ...doc.data()
+                }));
+            return list;
         })
         .catch(error => console.warn(error));
 };

@@ -8,6 +8,7 @@ import OrderSummary from "./OrderSummary";
 import OrderModal from "../OrderModal/OrderModal";
 import { useState } from "react";
 import { createOrder } from '../../utils/orders';
+import StrongProducts from "../StrongProducts/StrongProducts";
 
 const Cart = () => {
     const { cartList, clearList, itemsQuantity, totalPrice } = useCartContext();
@@ -61,6 +62,9 @@ const Cart = () => {
                         <Button variant='light'  className='border' as={Link} to='/'> Continue Shopping </Button>
                         <Button variant='danger'  className='emptyCartButton' onClick={() => clearList()}> Empty Cart </Button>
                     </div>
+                    <article className='text-center mt-5'>
+                        <StrongProducts/>
+                    </article>
                 </section>
 
             : <EmptyCartMessage/>}
