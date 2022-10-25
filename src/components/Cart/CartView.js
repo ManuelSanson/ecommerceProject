@@ -6,9 +6,14 @@ import { useCartContext } from "../../context/CartContext";
 import { useState } from "react";
 
 const CartView = ({product}) => {
-    const { removeItem } = useCartContext();
+    const { removeItem, addToCart } = useCartContext();
 
-    const [count, setCount] = useState(product.quantity);
+    const [count, setCount2] = useState(product.quantity);
+
+    const setCount = (newCount) => {
+        addToCart(product, newCount - count)
+        setCount2(newCount)
+    }
     
     return (
         <section className="mb-5">
