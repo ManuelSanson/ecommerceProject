@@ -1,4 +1,4 @@
-# Rugby Clothes E-Commerce App
+# The Rugby Store E-Commerce App
 
 ### Final project for Coderhouse ReactJS course
 
@@ -15,7 +15,7 @@ This project was created using:
 
 ## Demo
 
-![](link)
+![firebasestorage.googleapis.com/v0/b/rugby-clothes-ecommerce.appspot.com/o/ecommerceGIF.gif?alt=media&token=601375e8-e3ed-487c-bfef-a8136034e368](https://firebasestorage.googleapis.com/v0/b/rugby-clothes-ecommerce.appspot.com/o/ecommerceGIF.gif?alt=media&token=601375e8-e3ed-487c-bfef-a8136034e368)
 
 ## Folder structure
 - `/components`
