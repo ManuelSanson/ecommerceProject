@@ -11,9 +11,9 @@ const CartWidget = () => {
             <Link to='/cart'>
                 <FiShoppingCart/>
             </Link>
-            {itemsQuantity > 0 &&
+            {itemsQuantity() > 0 &&
             <div className='itemsQuantity'>
-                <h6> {itemsQuantity} </h6>
+                <h6> {itemsQuantity()} </h6>
             </div>}
         </div>
     )

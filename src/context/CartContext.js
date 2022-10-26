@@ -21,6 +21,7 @@ const CartContextProvider = ({children}) => {
                 imageAlt: 'Product image',
                 confirmButtonColor: '#000000',
             })            
+            sessionStorage.setItem('storedCartList', JSON.stringify([...cartList, {...newItem, quantity}]))
         } else {
             const itemIndex = cartList.findIndex((item) => item.id === newItem.id);
             const itemDraft = {...cartList[itemIndex]};
@@ -37,22 +38,36 @@ const CartContextProvider = ({children}) => {
                 background: '#f5f5dc',
                 imageAlt: 'Product image',
                 confirmButtonColor: '#000000',
-            })    
+            })
+            sessionStorage.setItem('storedCartList', JSON.stringify(cartDraft)) 
         }
     }
 
+    const storedCartList = JSON.parse(sessionStorage.getItem('storedCartList'))
+
     const clearList = () => {
         setCartList([])
+        sessionStorage.clear();
     }
 
     const removeItem = (id) => {
-        const removeItem = cartList.filter((item) => item.id !== id);
+        const removeItem = storedCartList.filter((item) => item.id !== id);
+        sessionStorage.setItem('storedCartList', JSON.stringify(removeItem))
+        
         return setCartList(removeItem);
     }
 
-    const itemsQuantity = cartList.reduce((accumulator, currentValue) => accumulator + currentValue.quantity, 0);
+    const itemsQuantity = () => {
+        if (storedCartList) {
+            return storedCartList.reduce((accumulator, currentValue) => accumulator + currentValue.quantity, 0);
+        }
+    }
     
-    const totalPrice = cartList.reduce((accumulator, item) => accumulator + (item.price * item.quantity), 0); 
+    const totalPrice = () => {
+        if (storedCartList) {
+            return storedCartList.reduce((accumulator, item) => accumulator + (item.price * item.quantity), 0); 
+        }
+    }
 
     return (
         <CartContext.Provider value={{cartList, isInCart, addToCart, clearList, removeItem, itemsQuantity, totalPrice}}>

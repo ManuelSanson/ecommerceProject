@@ -11,7 +11,8 @@ import { createOrder } from '../../utils/orders';
 import StrongProducts from "../StrongProducts/StrongProducts";
 
 const Cart = () => {
-    const { cartList, clearList, itemsQuantity, totalPrice } = useCartContext();
+    const { clearList, itemsQuantity, totalPrice } = useCartContext();
+    const storedCartList = JSON.parse(sessionStorage.getItem('storedCartList'))
 
     const [buyer, setBuyer] = useState({
         emailAddress: '',
@@ -33,8 +34,8 @@ const Cart = () => {
     const handleBuy = async () => {
         const newOrder = {
             buyer: buyer,
-            items: cartList,
-            total: totalPrice + 200,
+            items: storedCartList,
+            total: totalPrice(),
         }
         const newOrderId = await createOrder(newOrder);
         setSorderId(newOrderId);
@@ -43,16 +44,16 @@ const Cart = () => {
 
     return (
         <main>
-            {cartList.length ?
+            {storedCartList && storedCartList.length > 0 ?
 
                 <section>
                     <div className="yourCartItems m-4">
                         <h2>Your Cart:</h2>
-                        <h4> Items: {itemsQuantity} </h4>
+                        <h4> Items: {itemsQuantity()} </h4>
                     </div>
                     <div className="orderContainer m-5">
                         <div>
-                            {cartList.map((product) => 
+                            {storedCartList.map((product) => 
                             <CartView key={product.id} product={product}/>
                             )}
                         </div>

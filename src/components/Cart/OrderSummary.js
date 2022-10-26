@@ -16,15 +16,12 @@ const OrderSummary = ({onOpen}) => {
                                 Subtotal:
                             </Card.Text>
                             <Card.Text>
-                                $ {totalPrice}
+                                $ {totalPrice()}
                             </Card.Text>
                         </div>
                         <div className='m-2 orderSummaryDetail'>
                             <Card.Text className='fw-bold'>
-                                Delivery:
-                            </Card.Text>
-                            <Card.Text>
-                                $ 200
+                                Free Delivery
                             </Card.Text>
                         </div>
                         <div className='m-4 orderSummaryDetail fs-4'>
@@ -32,7 +29,7 @@ const OrderSummary = ({onOpen}) => {
                                 Total:
                             </Card.Text>
                             <Card.Text>
-                                $ {totalPrice + 200}
+                                $ {totalPrice()}
                             </Card.Text>
                         </div>
                         <div className='text-center mt-5'>
