@@ -1,5 +1,6 @@
 .cartWidgetContainer {
     display: flex;
+    order: 3;
 }
 
 .container svg {
@@ -24,4 +25,10 @@
 
 .itemsQuantity h6{
     margin-bottom: 0px;
+}
+
+@media screen and (max-width: 991px) {
+    .cartWidgetContainer {
+        order: unset;
+    }
 }

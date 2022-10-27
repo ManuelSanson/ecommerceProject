@@ -11,6 +11,10 @@ body {
   min-height: 100vh;
 }
 
+main {
+  min-height: 59.8vh;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

@@ -29,3 +29,16 @@
     color: black;
     font-weight: bold;
 }
+
+@media screen and (max-width: 991px) {
+    .navbarContainer {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .navbar .navbarContainer {
+        justify-content: center;
+    }
+}
