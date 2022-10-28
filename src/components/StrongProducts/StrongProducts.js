@@ -3,7 +3,6 @@ import { Button, Carousel, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { getStrongProducts } from "../../utils/products";
 import Spinner from "../Spinner/Spinner";
-//import ItemList from "../Items/ItemList";
 import './StrongProducts.css';
 
 const StrongProducts = () => {
