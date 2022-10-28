@@ -1,6 +1,7 @@
 .cartItemCard {
     display: flex;
     flex-direction: row;
+    width: 50rem;
 }
 
 .cartItemBody {
@@ -30,4 +31,67 @@
     background-color: transparent;
     border: transparent;
     color: white;
-} 
+}
+
+@media screen and (max-width: 1100px) {
+    .cartItemCard {
+        width: 40rem;
+    }
+}
+
+@media screen and (max-width: 880px) {
+    .cartItemCard {
+        width: 45rem;
+    }
+    .orderContainer {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 40px;
+    }
+}
+
+@media screen and (max-width: 880px) {
+    .cartItemCard {
+        width: 35rem;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .cartItemCard {
+        flex-direction: column;
+        width: 25rem;
+    }
+    .cartItemCardPicture {
+        width: 35%;
+        align-self: center;
+    }
+    .cartItemBody h5 {
+        font-size: 12px;
+    }
+    
+    .orderContainer {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 40px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .cartItemCard {
+        width: 20rem;
+    }
+    .cartItemBody {
+        flex-direction: column;
+    }
+    .cartItemBody .counter {
+        margin-right: 0px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .cartItemCard {
+        width: 18rem;
+    }
+}

@@ -8,7 +8,7 @@ import 'aos/dist/aos.css';
 const Item = ({product}) => {
     AOS.init()
     return (
-        <Card data-aos={"flip-down"} className='itemCard' style={{width: "18rem",}}>
+        <Card data-aos={"flip-down"} className='itemCard'>
             <Card.Img variant="top" src={product.pictureURL} className='p-2 itemCardPicture'/>
             <Card.Body>
                 <Card.Title> {product.title} </Card.Title>

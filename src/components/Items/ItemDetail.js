@@ -24,7 +24,7 @@ const ItemDetail = ({product}) => {
 
     return (
         <Container className='itemDetail'>
-            <Card data-aos={'zoom-out'} className='itemDetailCard' style={{width: "50rem",}}>
+            <Card data-aos={'zoom-out'} className='itemDetailCard'>
                 <Card.Img variant="top" src={product.pictureURL} className='p-2 itemDetailPicture'/>
                 <Card.Body className='mt-1 mb-1 itemDetailCardBody'>
                     <Card.Title className='mb-4'> {product.title} </Card.Title>

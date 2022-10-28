@@ -1,3 +1,21 @@
 .carouselContainer {
     max-width: 35%;
 }
+
+@media screen and (max-width: 880px) {
+    .carouselContainer {
+        max-width: 45%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .carouselContainer {
+        max-width: 60%;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .carouselContainer {
+        max-width: 80%;
+    }
+}

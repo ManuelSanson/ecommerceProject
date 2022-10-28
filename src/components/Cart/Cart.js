@@ -51,7 +51,7 @@ const Cart = () => {
                         <h2>Your Cart:</h2>
                         <h4> Items: {itemsQuantity()} </h4>
                     </div>
-                    <div className="orderContainer m-5">
+                    <div className="orderContainer">
                         <div>
                             {storedCartList.map((product) => 
                             <CartView key={product.id} product={product}/>

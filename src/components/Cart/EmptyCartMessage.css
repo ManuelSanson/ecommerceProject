@@ -4,10 +4,35 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 80px;
 }
 
 .continueShoppingButton {
     margin: 30px;
     background-color: #DC3545;
     border: #DC3545;
+}
+
+@media screen and (max-width: 576px) {
+    .EmptyCartMessageContainer h3 {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .EmptyCartMessageContainer h3 {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .EmptyCartMessageContainer h3 {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 340px) {
+    .EmptyCartMessageContainer h3 {
+        font-size: 14px;
+    }
 }

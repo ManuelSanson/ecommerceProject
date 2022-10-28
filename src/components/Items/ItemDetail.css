@@ -2,6 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 50rem;
 }
 
 .itemDetailCard {
@@ -23,4 +24,44 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+    .itemDetailCard {
+        flex-direction: column;
+        width: 25rem;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .itemDetailCard {
+        flex-direction: column;
+        width: 22rem;
+    }
+    .itemDetailCard img {
+        margin-left: 0px;
+    }
+    .itemDetailCardBody p {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .itemDetailCard {
+        flex-direction: column;
+        width: 20rem;
+    }
+    .itemDetailCardBody p {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 335px) {
+    .itemDetailCard {
+        flex-direction: column;
+        width: 18rem;
+    }
+    .itemDetailCardBody p {
+        font-size: 12px;
+    }
 }

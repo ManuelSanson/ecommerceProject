@@ -3,7 +3,6 @@
     justify-content: space-around;
 }
 
-
 .yourCartItems{
     display: flex;
     flex-direction: column;
@@ -26,7 +25,7 @@
 }
 
 .emptyCartButton {
-    margin: 30px;
+    margin-left: 30px;
     background-color: #DC3545;
     border: #DC3545;
 }

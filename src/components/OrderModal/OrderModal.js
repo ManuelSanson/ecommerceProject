@@ -30,7 +30,7 @@ const OrderModal = ( {showModal, onClose, onBuy, orderId, setBuyer} ) => {
         setBuyer(buyerDraft)
     };
 
-    const isDisabled = values.emailAddress === '' || values.confirmationEmailAddress === '' || values.name === '' || values.phone === '';
+    const isDisabled = values.emailAddress === '' || values.confirmationEmailAddress === '' || values.name === '' || values.phone === '' || values.emailAddress !== values.confirmationEmailAddress;
 
     const handleOnClose = () => {
         onClose();

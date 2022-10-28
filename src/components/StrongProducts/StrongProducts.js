@@ -23,7 +23,6 @@ const StrongProducts = () => {
         } 
         fetchData()
     }, [])
-    console.log(products);
 
     return (
         <div>

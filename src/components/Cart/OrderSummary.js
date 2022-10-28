@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Card, } from 'react-bootstrap';
 import { useCartContext } from '../../context/CartContext';
+import './OrderSummary.css';
 
 const OrderSummary = ({onOpen}) => {
     const { totalPrice } = useCartContext();
@@ -8,7 +9,7 @@ const OrderSummary = ({onOpen}) => {
     return (
         <section>
             <div className="orderSummary">
-                <Card className='' style={{width: "18rem",}}>
+                <Card className='orderSummaryCard'>
                     <Card.Body className=''>
                         <Card.Title className='mb-4 fs-2 text-center'> Order Summary </Card.Title>
                         <div className='m-2 orderSummaryDetail'>

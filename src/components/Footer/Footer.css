@@ -19,3 +19,12 @@
     width: 40px;
     margin-right: 10px;
 }
+
+@media screen and (max-width: 400px) {
+    .footerContainer {
+        flex-direction: column;
+    }
+    .footerContainer h6 {
+        margin-bottom: 10px;
+    }
+}

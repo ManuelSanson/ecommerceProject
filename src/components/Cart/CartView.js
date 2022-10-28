@@ -19,7 +19,7 @@ const CartView = ({product}) => {
         <section className="mb-5">
             <div className="cartItemsContainer">
                 <div>
-                    <Card className='cartItemCard' style={{width: "50rem",}}>
+                    <Card className='cartItemCard'>
                         <Card.Img variant="top" src={product.pictureURL} className='p-2 cartItemCardPicture'/>
                         <Card.Body className='cartItemBody fw-bold'>
                             <Card.Title> {product.title} </Card.Title>
