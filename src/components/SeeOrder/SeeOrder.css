@@ -1,0 +1,23 @@
+.seeOrderContainer .searchInputContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.seeOrderContainer .searchInputContainer .searchInput {
+    width: 20%; 
+}
+
+.orderSpinnerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.seeOrderContainer .seeOrderMade .itemCard .card-body a {
+    display: none;
+}
+
+.seeOrderContainer .seeOrderMade .itemCard .card-body .cardTextPrice {
+    display: none;
+}

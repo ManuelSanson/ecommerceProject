@@ -39,6 +39,7 @@ const Cart = () => {
         }
         const newOrderId = await createOrder(newOrder);
         setSorderId(newOrderId);
+        console.log(newOrderId);
         clearList();
     }
 

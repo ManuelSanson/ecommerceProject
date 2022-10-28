@@ -5,7 +5,6 @@ import './OrderModal.css';
 import Spinner from '../Spinner/Spinner';
 
 const OrderModal = ( {showModal, onClose, onBuy, orderId, setBuyer} ) => {
-
     const initialValues = {
         emailAddress: '',
         confirmationEmailAddress: '',
@@ -87,7 +86,12 @@ const OrderModal = ( {showModal, onClose, onBuy, orderId, setBuyer} ) => {
             showSpinner && orderId && (
                 <div className='modalOrderFooter'>
                     <Alert key='success' variant='success'>
-                        Thank you for your purchase! Your Order ID is: <b> {orderId} </b>
+                        <p>
+                            Thank you for your purchase! Your Order ID is: <b> {orderId} </b>
+                        </p>
+                        <p>
+                            Do not forget to copy this ID if you want to see your Order
+                        </p>
                     </Alert>
                     <Button variant='success' className='border' as={Link} to='/'> Continue Shopping </Button>
                 </div>

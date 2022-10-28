@@ -8,6 +8,7 @@ import Cart from './components/Cart/Cart'
 import CartContextProvider from './context/CartContext';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
+import SeeOrder from './components/SeeOrder/SeeOrder';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path='/' element={<ItemListContainer greeting={'Welcome to the Rugby Corner!'} />} />
             <Route path='/category/:categoryId' element={<ItemListContainer/>} />
             <Route path='/item/:id' element={<ItemDetailContainer/>} />
+            <Route path='/seeorder' element={<SeeOrder/>} />
             <Route path='/contact' element={<Contact/>} />
             <Route path='/cart' element={<Cart/>} />
           </Routes>
