@@ -9,14 +9,19 @@ This project was created using:
 - Firebase
 - React Router Dom
 
+It has full responsive design
+
 ## Deployment
 
 [manuelsanson.github.io/ecommerceProject](https://manuelsanson.github.io/ecommerceProject)
 
-## Demo
+## Demos
 
-![The Rugby Store demo](./ecommerceGIF.gif)
+### Desktop
+![The Rugby Store demo](./public/gifs/desktop_ecommerceGIF.gif)
 
+### Mobile
+![The Rugby Store demo](./public/gifs/mobile_ecommerceGIF.gif)
 ## Folder structure
 - `/components`
 - `/context`
